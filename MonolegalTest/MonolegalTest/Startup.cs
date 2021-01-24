@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MonolegalTest.Models;
+using MonolegalTest.Services;
 
 namespace MonolegalTest
 {
@@ -30,8 +31,9 @@ namespace MonolegalTest
 			services.AddSingleton<IDatabaseSettings>
 				(d => d.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 			services.Configure<DatabaseSettings>
-				(Configuration.GetSection(nameof(DatabaseSettings)));
+                (Configuration.GetSection(nameof(DatabaseSettings)));
 
+			services.AddSingleton<FacturaService>();
 			services.AddControllers();
 		}
 

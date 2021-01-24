@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace MonolegalTest.Models
 {
 	public class Factura
-	{
+	{	
+		[BsonId]
+		[BsonRepresentation(BsonType.ObjectId)]
+		public string Id { get; set; }
 		[BsonElement("CodigoFactura")]
 		public string CodigoFactura { get; set; }
 		[BsonElement("Cliente")]
