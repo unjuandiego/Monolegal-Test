@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FacturaComponent } from './factura/factura.component';
+import {NgxPaginationModule} from 'ngx-pagination';  
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FacturaService } from './Shared/factura.service';
+
 
 @NgModule({
   declarations: [
@@ -10,9 +15,11 @@ import { FacturaComponent } from './factura/factura.component';
     FacturaComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,FormsModule,HttpClientModule,ReactiveFormsModule,NgxPaginationModule
   ],
-  providers: [],
+  providers: [FacturaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+ 

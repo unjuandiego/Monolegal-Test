@@ -1,1 +1,43 @@
-<p>factura works!</p>
+<div class="imagen">
+  <img class="izquierda" src="https://pbs.twimg.com/profile_images/1314203219178844162/pEBD3BU5.jpg">
+  <aside>
+    <h1 class="display-4 text-center">Factura</h1>
+  </aside>
+  <div class="reset"></div>
+</div>
+  <div class="container" style="overflow-x:auto;">  
+    <table class="table">  
+      <thead class="thead-light">  
+        <th>ID</th>  
+        <th>CodigoFactura</th>  
+        <th>Cliente</th>  
+        <th>Ciudad</th>  
+        <th>NIT</th>  
+        <th>TotalFactura</th>
+        <th>SubTotal</th>
+        <th>IVA</th>
+        <th>Retencion</th>
+        <th>FechaCreacion</th>
+        <th>Estado</th>
+        <th>Pagada</th>
+        <th>FechaPago</th>  
+      </thead>  
+      <tbody>  
+        <tr *ngFor= "let f of service.list" >               
+        <td>{{f.Id}}</td>
+        <td>{{f.CodigoFactura}}</td>
+        <td>{{f.Cliente}}</td>
+        <td>{{f.Ciudad}}</td>
+        <td>{{f.NIT}}</td>
+        <td>{{f.TotalFactura}}</td>
+        <td>{{f.SubTotal}}</td>
+        <td>{{f.IVA}}</td>
+        <td>{{f.Retencion}}</td>
+        <td>{{f.FechaCreacion}}</td>
+        <td>{{f.Estado}}</td>
+        <td>{{f.Pagada}}</td>
+        <td>{{f.FechaPago}}</td>
+        </tr>  
+      </tbody>  
+    </table>  
+  </div>  

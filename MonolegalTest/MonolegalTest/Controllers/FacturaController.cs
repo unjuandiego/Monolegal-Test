@@ -6,10 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MonolegalTest.Models;
 using MonolegalTest.Services;
+using System.Text.Json;
 
 namespace MonolegalTest.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Factura")]
     [ApiController]
     public class FacturaController : ControllerBase
     {
@@ -18,10 +19,14 @@ namespace MonolegalTest.Controllers
         {
             _facturaService = facturaService;
         }
+        [Route("GetAllFactura")]
         [HttpGet]
-        public ActionResult<List<Factura>> Get()
+        public object Get()
         {
-            return _facturaService.Get();
+           
+            var json = JsonSerializer.Serialize(_facturaService.Get());
+            return json;
+
         }
     }
 }
