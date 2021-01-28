@@ -21,7 +21,7 @@ namespace MonolegalTest.Services
         public List<Factura> Get() {
             return _factura.Find(d => true).ToList();
         }
-        public void Getprimer()
+        public void UpdateEstado()
         {
             var filter = Builders<Factura>.Filter.Eq(d => d.Estado, "primerrecordatorio");
 
@@ -33,7 +33,19 @@ namespace MonolegalTest.Services
 
             _factura.UpdateMany(filter1, update2);
             _factura.UpdateMany(filter, update);
+        }
+        public bool FindEstado(string estado) {
 
+            var lista = _factura.Find(d => d.Estado == estado).ToList();
+            if (lista == null || lista.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
         }
     }
 }

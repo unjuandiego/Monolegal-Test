@@ -21,6 +21,8 @@ namespace MonolegalTest.Controllers
             _facturaService = facturaService;
             _emailSender = emailSender;
         }
+
+        //listar todas las facturas
         [Route("GetAllFactura")]
         [HttpGet]
         public object Get()
@@ -30,31 +32,49 @@ namespace MonolegalTest.Controllers
             return json;
 
         }
+        //Enviar Correo, [prueba]
         [Route("GetAllEmail")]
         [HttpGet]
-        public async void Index()
+        public async void Email(string estado)
         {
             await _emailSender
-                .SendEmailAsync("juandiegoarboleda@utp.edu.co", "VERSION PRUEBA", "Esto es una prueba")
+                .SendEmailAsync("juandiegoarboleda@utp.edu.co", "Estado De Su Factura", estado)
                 .ConfigureAwait(false);
         }
-        [Route("GetAll1")]
+
+
+        [Route("Update")]
         [HttpGet]
         public  object Update()
 
         {
-             _facturaService.Getprimer();
+             _facturaService.UpdateEstado();
+            //Devolver Base dedatos con Estado actualizado
             var json = JsonSerializer.Serialize(_facturaService.Get());
             return json;
 
         }
-        /*public object Get1()
-        {
+        [Route("EstadoEmail")]
+        [HttpGet]
+        public object EstadoEmail()
 
+        {
+            if (_facturaService.FindEstado("primerrecordatorio") == true)
+            {
+                Email("Primer recordatorio");
+            }
+            else if(_facturaService.FindEstado("segundorecordatorio") == true)
+            {
+                Email("Segundo recordatorio");
+            }
+            else if (_facturaService.FindEstado("desactivado") == true)
+            {
+                Email("Desactivado");
+            }            
+            //Devolver Base dedatos con Estado actualizado
             var json = JsonSerializer.Serialize(_facturaService.Get());
             return json;
 
-        }*/
-
+        }
     }
 }
