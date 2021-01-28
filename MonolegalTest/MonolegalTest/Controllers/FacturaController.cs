@@ -38,7 +38,7 @@ namespace MonolegalTest.Controllers
         public async void Email(string estado)
         {
             await _emailSender
-                .SendEmailAsync("juandiegoarboleda@utp.edu.co", "Estado De Su Factura", estado)
+                .SendEmailAsync("paula@monolegal.co", "Estado De Su Factura", estado)
                 .ConfigureAwait(false);
         }
 
