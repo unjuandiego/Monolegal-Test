@@ -15,9 +15,11 @@ namespace MonolegalTest.Controllers
     public class FacturaController : ControllerBase
     {
         public FacturaService _facturaService;
-        public FacturaController(FacturaService facturaService)
+        private readonly IEmailSender _emailSender;
+        public FacturaController(FacturaService facturaService, IEmailSender emailSender)
         {
             _facturaService = facturaService;
+            _emailSender = emailSender;
         }
         [Route("GetAllFactura")]
         [HttpGet]
@@ -28,5 +30,31 @@ namespace MonolegalTest.Controllers
             return json;
 
         }
+        [Route("GetAllEmail")]
+        [HttpGet]
+        public async void Index()
+        {
+            await _emailSender
+                .SendEmailAsync("juandiegoarboleda@utp.edu.co", "VERSION PRUEBA", "Esto es una prueba")
+                .ConfigureAwait(false);
+        }
+        [Route("GetAll1")]
+        [HttpGet]
+        public  object Update()
+
+        {
+             _facturaService.Getprimer();
+            var json = JsonSerializer.Serialize(_facturaService.Get());
+            return json;
+
+        }
+        /*public object Get1()
+        {
+
+            var json = JsonSerializer.Serialize(_facturaService.Get());
+            return json;
+
+        }*/
+
     }
 }

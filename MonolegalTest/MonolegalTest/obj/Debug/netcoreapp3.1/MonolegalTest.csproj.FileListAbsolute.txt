@@ -28,3 +28,13 @@ C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\ne
 C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.dll
 C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.pdb
 C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.genruntimeconfig.cache
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\bin\Debug\netcoreapp3.1\MonolegalTest.Views.dll
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\bin\Debug\netcoreapp3.1\MonolegalTest.Views.pdb
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.RazorAssemblyInfo.cache
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.RazorAssemblyInfo.cs
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.TagHelpers.input.cache
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.TagHelpers.output.cache
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.RazorCoreGenerate.cache
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\Razor\Controllers\Index.cshtml.g.cs
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.RazorTargetAssemblyInfo.cs
+C:\Users\workj\Downloads\Monolegal-Test\MonolegalTest\MonolegalTest\obj\Debug\netcoreapp3.1\MonolegalTest.Views.pdb

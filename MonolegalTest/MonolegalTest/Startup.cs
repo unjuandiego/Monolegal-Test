@@ -32,6 +32,9 @@ namespace MonolegalTest
 				(d => d.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 			services.Configure<DatabaseSettings>
                 (Configuration.GetSection(nameof(DatabaseSettings)));
+			services.AddTransient<IEmailSender, EmailSender>();
+			services.Configure<EmailSenderOptions>(Configuration.GetSection("EmailSenderOptions"));
+			services.AddControllersWithViews();
 
 			services.AddSingleton<FacturaService>();
 			services.AddControllers();

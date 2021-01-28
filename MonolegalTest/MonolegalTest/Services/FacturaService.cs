@@ -11,6 +11,7 @@ namespace MonolegalTest.Services
     public class FacturaService
     {
         private IMongoCollection<Factura> _factura;
+
         public FacturaService(IDatabaseSettings settings)
         {
            var cliente = new MongoClient(settings.ConnectionString);
@@ -19,6 +20,20 @@ namespace MonolegalTest.Services
         }
         public List<Factura> Get() {
             return _factura.Find(d => true).ToList();
+        }
+        public void Getprimer()
+        {
+            var filter = Builders<Factura>.Filter.Eq(d => d.Estado, "primerrecordatorio");
+
+            var update = Builders<Factura>.Update.Set(x => x.Estado, "segundorecordatorio");
+
+            var filter1 = Builders<Factura>.Filter.Eq(d => d.Estado, "segundorecordatorio");
+
+            var update2 = Builders<Factura>.Update.Set(x => x.Estado, "desactivado");
+
+            _factura.UpdateMany(filter1, update2);
+            _factura.UpdateMany(filter, update);
+
         }
     }
 }
